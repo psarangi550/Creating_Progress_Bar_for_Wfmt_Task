@@ -20,6 +20,6 @@ from wfmtprogressbarusingceleryredisapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
-    # path('celery_progress/',include("celery_progress.urls")),
-    re_path(r'^celery-progress/', include('celery_progress.urls')),
+    path('celery_progress/',include("celery_progress.urls",namespace="celery_progress")),
+    # re_path(r'^celery-progress/', include('celery_progress.urls',namespace="celery_progress")),
 ]
