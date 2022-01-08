@@ -9,10 +9,9 @@ logger=get_task_logger(__name__)
 @shared_task(bind=True)
 def duration(self):
     progress_recorder=ProgressRecorder(self)
-    for i in range(10):
-        time.sleep(1)
-        progress_recorder.set_progress(i+1,10,f"completed {i+1} iteration of 10 ")
-    return 5
+    for i in range(20):
+        time.sleep(2)
+        progress_recorder.set_progress(i+1,20,f"completed {i+2} iteration of 20 ")
 
 @shared_task
 def add(a,b):
